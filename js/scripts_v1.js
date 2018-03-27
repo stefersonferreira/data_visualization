@@ -107,7 +107,7 @@
                     carregaDadosPrograma(d)
                  });
                       }
-              }, 1000);
+              }, 3000);
 
 
 
@@ -118,7 +118,7 @@
             var tipo = valores[0];
 
 
-            //exibe o título e a descirçao do programa selecionado
+            //exibe a descirçao do programa selecionado na lateral
             d3.select("#dadosPrograma").html(valores[4]);
 
 
