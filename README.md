@@ -1,9 +1,9 @@
 # Projeto P6: Data Visualization
 
 ## Sumário
-   - São apresentados os dados de programas realizados no estado onde resido, os dados contem informaçoes sobre programas, locais onde ocorrem e números referentes a cada um deles.
-   - Apesar de no arquivo possuirem mais programas selecionei os 5 seguintes:
-       	- Centro de Educação Integral
+	- São apresentados os dados de programas realizados no estado onde resido, os dados contem informaçoes sobre programas, locais onde ocorrem e números referentes a cada um deles.
+   	- Apesar de no arquivo possuirem mais programas selecionei os 5 seguintes:
+		- Centro de Educação Integral
 		- Cidadão do Mundo
  		- Sim, Eu Posso!
 		- Brasil Alfabetizado
