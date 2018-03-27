@@ -1,0 +1,67 @@
+<html>
+<head>
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/tooltip.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+	<script src="https://d3js.org/d3.v4.js"></script>
+	<script src="js/scripts_v1.js"></script>
+
+</head>
+
+<body>
+	<div id="header">
+        <div class="row header">
+          <div class="container">
+          		<h1>Programas Educacionais do Governo do Estado</h1>
+          </div>
+        </div>
+    </div>
+<div class="principal">
+      <div id='container' class='container'>
+        <div id='graph_full'></div>
+      <div id="dadosMunicipio" class='tt tt-hidden'>
+          <div>
+            <span id='municipio' style='font-weight:bold;'></span>
+          </div>
+          <div class='blue-border' id='type'></div>
+          <div class=''>
+             <span class='right-bold' id='dadosTooltip'></span>
+          </div>
+      </div>
+      <div id="dadosPrograma" style="display: block;">
+           
+      </div>
+
+	</div>
+      </div>
+      
+</div>
+
+<script type="text/javascript">
+ 
+ 		var margin = 75,
+	            width = 1100 - margin,
+	            height = 600 - margin;
+
+
+	    //criando o svg para a exibiçao
+		var svg = d3.select('.container #graph_full')
+				.append("svg")
+	            .attr("width", width + margin)
+	            .attr("height", height + margin)
+	            .append('g')
+	            .attr('class', 'map');
+		
+		//chamada para a carga do mapa
+		carregaMapa(svg) ;
+
+		var isIE9 = false
+		if (!window.console) {
+		  var console = {log: function() {}};
+		  isIE9 = true
+		}
+  </script>
+</body>
+
+</html>

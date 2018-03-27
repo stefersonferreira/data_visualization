@@ -1,0 +1,127 @@
+body {
+  padding-top: 120px;
+  padding-left: 20px;
+
+
+}
+
+#header {
+  height: 90px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.principal{
+    
+    /*max-width: 90%;
+    margin: 0px auto;*/
+}
+
+
+#container{
+  position: relative;
+  width: 100%;
+}
+
+
+svg{
+  background-color: #eee /*#f5f8fa;*/
+}
+
+ circle {
+        fill: #FFD200;
+        stroke: #FCB813;
+        stroke-width: 0.7;
+        opacity: 0.8;
+        z-index: -1;
+      }
+
+      div.mapa_buttons {
+        top: 50px;
+        /* left: 50px; */
+        width: 250px;
+        position: absolute;
+        height: 100%;
+      }
+
+      div.mapa_buttons div {
+        background-color: #FFD200;
+        border: 2px solid #FCB813;
+        color: black;
+        padding: 10px;
+        margin: 20px;
+      }
+
+      div.mapa_buttons span {
+        
+        padding: 10px;
+        margin: 20px;
+      }
+
+      #detalhe_info2 {
+      position: absolute;
+      width: 40%;
+      height: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to left, #FCB813, transparent 95%);
+      animation-name: dtlh;
+      animation-duration: 1s;
+      z-index: 0;
+      overflow: auto;
+      
+   }
+
+
+.detalhe_info_title2{
+      margin-top: 70px;
+      margin-right: 40px;
+  }
+  .detalhe_info_title2 > h1 {
+      font-weight: bold;
+      text-align: left;
+      font-size: 24px;
+      /*color: #fff;*/
+      width: 70%;
+      font-family: Arial, Helvetica;
+      text-transform: uppercase;
+      position: absolute;;
+      right: 20px;
+  }
+  .detalhe_info_title2 > p {
+      /*font-weight: bold;*/
+      text-align: left;
+      font-size: 14px;
+      /*color: #fff;*/
+      width: 70%;
+      text-align: justify;
+      position: absolute;;
+      right: 20px;
+      top: 150px;
+  }
+
+  /*primeira versão*/
+  #dadosPrograma{
+
+    font-family:"Arial","Helvetica";
+    position: absolute;
+    /*top:-1000px;*/
+    bottom: 20px;
+    width: 200px;
+    margin: 20px;
+    right: 150px;
+    min-height:100px;
+    padding: 10px;
+    font-size: 12px;
+    background: rgba(255, 255, 255, .98);
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 10px lightgray;
+    color:black;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+
+</style>
