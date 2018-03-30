@@ -38,7 +38,7 @@ svg{
       }
 
       div.mapa_buttons {
-        top: 50px;
+        top: 0px;
         /* left: 50px; */
         width: 250px;
         position: absolute;
@@ -50,7 +50,17 @@ svg{
         border: 2px solid #FCB813;
         color: black;
         padding: 10px;
-        margin: 20px;
+        margin: 10px;
+      }
+
+      div.mapa_buttons .btn_a {
+        background-color: #88B940;
+        border: 2px solid #68AC45;
+        color: black;
+        padding: 10px;
+        margin: 10px;
+        position: relative;
+        top: 30px;
       }
 
       div.mapa_buttons span {
@@ -76,7 +86,7 @@ svg{
 
 
 .detalhe_info_title2{
-      margin-top: 70px;
+      margin-top: 20px;
       margin-right: 40px;
   }
   .detalhe_info_title2 > h1 {
@@ -99,7 +109,7 @@ svg{
       text-align: justify;
       position: absolute;;
       right: 20px;
-      top: 150px;
+      top: 100px;
   }
 
   /*primeira versão*/
@@ -122,6 +132,50 @@ svg{
     pointer-events: none;
     z-index: 100;
   }
+
+  #pergunta{
+  font-family:"Arial","Helvetica";
+  position: absolute;
+  /*top:-1000px;*/
+  top: 290px;
+  width: 300px;
+  margin: 10px;
+  left: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color:black;
+  display: none;
+}
+
+/*legendas*/
+
+.key-dot {
+    display: inline-block;
+    height: 10px;
+    margin-right: .5em;
+    width: 10px;
+}
+
+.legenda {
+  bottom: 0px;
+  width: 300px;
+  margin: 10px;
+  left: 500px;
+  padding: 10px;
+  font-size: 14px;
+  color:black;
+  position: absolute;
+  display: none;
+}
+
+.nao_contemplado { background: #fff;}
+.contemplado_p { background: #0099D7;}
+.contemplado_g { background: red;}
+.contemplado_2 { background: #ddd;}
+.contemplado_3 { background: #FFD200;}
+.contemplado_4 { background: #88B940;}
+
+}
 
 
 </style>

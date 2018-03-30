@@ -34,7 +34,6 @@
         //carregamento dos dados a partir do csv
         d3.csv('dados/dados.csv', plotCirculos);
 
-
         function plotCirculos(dados){
 
           //armazena os tipos de exibiçao a serem feitas
@@ -50,11 +49,11 @@
          
           //adicionando os botões para selecionar o programa 
           //a visualizar
-          d3.select("#container")
-                  .append("div")
-                    .attr("class", "mapa_buttons")
-                    .append("span")
-                    .attr("id", "programa_at");
+          d3.select('#container')
+                  .append('div')
+                    .attr('class', 'mapa_buttons')
+                    .append('span')
+                    .attr('id', 'programa_at');
 
 
                 //variáve para controlar o programa selecionado
@@ -76,35 +75,36 @@
           
 
                   //cria os botões de acordo com os programas
-                  var mapa_buttons = d3.select(".mapa_buttons")
-                                            .selectAll("div")
+                  var mapa_buttons = d3.select('.mapa_buttons')
+                                            .selectAll('div')
                                             .data(tipoExibicoes)
                                             .enter()
-                                            .append("div")
+                                            .append('div')
                                             .text(function(d) { 
                                               //dados da descriçao
-                                              return d[3]});
+                                              return d[3];
+                                            });
 
 
                   //tratamento do clique
                   //primiero muda as cores de todos os botões
                   //depois muda a cor do programa selecionado
-                  mapa_buttons.on("click", function(d){
-                    d3.select(".mapa_buttons")
-                      .selectAll("div")
+                  mapa_buttons.on('click', function(d){
+                    d3.select('.mapa_buttons')
+                      .selectAll('div')
                       .transition()
                       .duration(500)
-                      .style("background", "#FFD200")
-                      .style("color", "black");
+                      .style('background', '#FFD200')
+                      .style('color', 'black');
 
                     d3.select(this)
                       .transition()
                       .duration(500)
-                      .style("background", "#0099D7")
-                      .style("color", "white");
+                      .style('background', '#0099D7')
+                      .style('color', 'white');
 
                     //faz a chamada de acordo com o botão selecionado
-                    carregaDadosPrograma(d)
+                    carregaDadosPrograma(d);
                  });
                       }
               }, 3000);
@@ -112,15 +112,14 @@
 
 
           function carregaDadosPrograma(valores){   
-
             
             //seleciona o tipo de programa a ser exibido
             var tipo = valores[0];
 
 
             //exibe o título e a descirçao do programa selecionado
-            d3.select("#dtlh_title").html(valores[3]);
-            d3.select("#dtlh_desc").html(valores[4]);
+            d3.select('#dtlh_title').html(valores[3]);
+            d3.select('#dtlh_desc').html(valores[4]);
 
 
             //calcula o domínio em cima do campo selecionado
@@ -137,7 +136,7 @@
 
 
                     //seleciona todos os círculos
-                    var circles = svg.selectAll("circle");
+                    var circles = svg.selectAll('circle');
                     
                     //remove para posteriormente adicionar com o programa selecionado
                     circles
@@ -153,26 +152,28 @@
 
                     //adicionando os circulos de acordo com os dados
                     //e programas selecionados
-                    svg.selectAll("circle")
+                    svg.selectAll('circle')
                         .data(dados)
                         .enter()
                         .append('circle')
                         .sort(function(a, b) { return eval('b.'+ tipo) - eval('a.'+ tipo) })
-                        .attr("cx", function(d){
+                        .attr('cx', function(d){
                             //identifica onde posicionar o circulo
                             return projection([d.longitude, d.latitude])[0];
                           })
-                        .attr("cy", function(d){
+                        .attr('cy', function(d){
                             //identifica onde posicionar o circulo
                             return projection([d.longitude, d.latitude])[1];
                           })
-                        .attr("r", function(d){
+                        .attr('r', function(d){
 
                           //caso o valor para ser apresentado for maior que 0
                           //esse município é selecionado para posteriormente
                           //ficar em destaque
-                          if (eval('d.'+tipo) > 0)
+                          if (eval('d.'+tipo) > 0){
                             municipios_c_programa.push(d.municipio);
+                           
+                          }
 
                           //a partir do valor definido em arquivo
                           //é tratado através da escala para 
@@ -196,19 +197,24 @@
                 */
                     function update_municipios(d){
                         if(municipios_c_programa.indexOf(d.properties.name) !== -1){
-                          return "#0099D7";
+                          return '#0099D7';
                         }else{
-                          return "white";  
+                          return 'white';  
                         }
                     }
 
                     //altera a cor de cada municipio que participa do programa
-                    svg.selectAll("path")
+                    svg.selectAll('path')
                     .transition()
                     .duration(500)
-                    .attr("fill", update_municipios);
+                    .attr('fill', update_municipios);
 
           }
+
+          function explanacao(){
+                //['municipios_n_contemplados', 0, 30, 'Municípios não contemplados', 'Estes são são os municípios que não foram contemplados com nenhum programa.']
+          }
+
 
           //variárvel para controle da exibiçao do tooltip
           var lastShow = new Date();
@@ -244,7 +250,7 @@
 
 
                         //selectiona a área de tooltip
-            var tt = d3.select('.tt')
+            var tt = d3.select('.tt');
             if (isIE9 || !tt.size()) return
                 tt.classed('tt-hidden', false);
 
@@ -265,7 +271,7 @@
           */
           function ttHide(d){
 
-            var tt = d3.select('.tt')
+              tt = d3.select('.tt')
               if (isIE9 || !tt.size()) return
               //d3.event.stopPropagation();
               var tt = d3.select('.tt');

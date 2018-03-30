@@ -3,7 +3,8 @@ div.tt {
   font-family:"Arial","Helvetica";
   position: absolute;
   /*top:-1000px;*/
-  bottom: 20px;
+  top: 20px;
+  left: 650px;
   width: 200px;
   margin: 20px;
   min-height:100px;
@@ -65,4 +66,18 @@ div.tt {
 .right-bold{
   float: right;
   font-weight: bold;
+}
+
+#nomeMunicipio{
+  font-family:"Arial","Helvetica";
+  position: absolute;
+  /*top:-1000px;*/
+  bottom: 40px;
+  width: 300px;
+  margin: 10px;
+  left: 500px;
+  padding: 10px;
+  font-size: 14px;
+  color:black;
+ 
 }
