@@ -18,9 +18,22 @@ body {
     margin: 0px auto;*/
 }
 
+#iniciar {
+        background-color: #FFD200;
+        border: 2px solid #FCB813;
+        color: black;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        width: 200px;
+        margin-left: auto;
+    margin-right: auto;
+  }
+
 
 #container{
   position: relative;
+  top: 700px;
   width: 100%;
 }
 
@@ -38,7 +51,7 @@ svg{
       }
 
       div.mapa_buttons {
-        top: 0px;
+        top: 50px;
         /* left: 50px; */
         width: 250px;
         position: absolute;
@@ -73,8 +86,8 @@ svg{
       position: absolute;
       width: 40%;
       height: auto;
-      top: 0;
-      right: 0;
+      top: 70px;
+      right: 90px;
       bottom: 0;
       background: linear-gradient(to left, #FCB813, transparent 95%);
       animation-name: dtlh;
@@ -86,7 +99,7 @@ svg{
 
 
 .detalhe_info_title2{
-      margin-top: 20px;
+      margin-top: 30px;
       margin-right: 40px;
   }
   .detalhe_info_title2 > h1 {
@@ -137,7 +150,7 @@ svg{
   font-family:"Arial","Helvetica";
   position: absolute;
   /*top:-1000px;*/
-  top: 290px;
+  top: 3300px;
   width: 300px;
   margin: 10px;
   left: 10px;

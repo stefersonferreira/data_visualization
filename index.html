@@ -2,6 +2,7 @@
 <head>
 	<link href="css/style.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/tooltip.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   
 	<script src="https://d3js.org/d3.v4.js"></script>
@@ -13,9 +14,8 @@
 	<div id="header">
         <div class="row header">
           <div class="container">
-          		<h1>Programas Educacionais do Governo do Estado</h1>
-              <br>
-              <h2> Entendo a dstribuição dos programas</h2>
+              <h1> Programas Educacionais do Governo do Estado</h1>
+              <h2> Entendo a distribuição dos Programas Educacionais do Governo do Estado</h2>
           		<p> O Governo do estado realiza programas relacionados à educação com o objetivo de fomentar o crescimento cultural da populcação, elevar os indices educacionais e capacitar os cidadãos para que desenvolvam suas regiões.</p>
 
               <p> Analisamos alguns do programas específicos que visam o objetivo citado acima. Estes programas se distribuem pelos municípios do estado.</p>
@@ -25,11 +25,13 @@
               <h2> Quem são os maiores e menores beneficiados pelos programas?</h2>
               <p> Para responder essas 2 perguntas disponibilizamos opçoes para avaliar os locais não contemplados e os contemplados por mais de 1 programa.</p>
 
+              <div id="iniciar">Iniciar</div>
           </div>
         </div>
     </div>
 <div class="principal">
       <div id='container' class='container'>
+        <h1> Programas Educacionais do Governo do Estado</h1>
         <div id='graph_full'></div>
       <div id="dadosMunicipio" class='tt tt-hidden'>
           <div>
@@ -79,8 +81,12 @@
 	            .attr('class', 'map');
 		
 		//chamada para a carga do mapa
-		carregaMapa(svg) ;
+    $( "#iniciar" ).click(function() {
+        $('html, body').animate({ scrollTop:3031 },"fast");
+        carregaMapa(svg) ;
 
+    });
+		
 		var isIE9 = false
 		if (!window.console) {
 		  var console = {log: function() {}};
