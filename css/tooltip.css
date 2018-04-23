@@ -3,8 +3,8 @@ div.tt {
   font-family:"Arial","Helvetica";
   position: absolute;
   /*top:-1000px;*/
-  top: 20px;
-  left: 650px;
+  bottom: 0px;
+  left: 480px;
   width: 200px;
   margin: 20px;
   min-height:100px;
@@ -17,30 +17,7 @@ div.tt {
   pointer-events: none;
   z-index: 100;
 }
-/*
-.tt:after, .tt:before {
-  top: 100%;
-  left: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  z-index: 100;
-}
-.tt:after {
-  border-color: rgba(255, 255, 255, 0);
-  border-top-color: #fff;
-  border-width: 12px;
-  margin-left: -12px;
-}
-.tt:before {
-  border-color: rgba(102, 102, 102, 0);
-  border-top-color: lightgray;
-  border-width: 13px;
-  margin-left: -13px;
-}*/
+
 .tt-hidden{
   -webkit-transition: opacity .8s ease;
   -moz-transition: opacity .8s ease;
@@ -72,12 +49,55 @@ div.tt {
   font-family:"Arial","Helvetica";
   position: absolute;
   /*top:-1000px;*/
-  bottom: 40px;
+  bottom: 80px;
   width: 300px;
   margin: 10px;
-  left: 500px;
+  left: 0px;
   padding: 10px;
   font-size: 14px;
   color:black;
  
 }
+
+#tipo_dado{
+  font-family:"Arial","Helvetica";
+  position: absolute;
+  /*top:-1000px;*/
+  bottom: 0px;
+  width: 300px;
+  margin-left: 10px;
+  left: 0px;
+  padding: 10px;
+  font-size: 14px;
+  color:black;
+ 
+}
+
+/*legendas*/
+
+.key-dot {
+    display: inline-block;
+    height: 10px;
+    margin-right: .5em;
+    width: 10px;
+}
+
+.legenda {
+  bottom: 30px;
+  width: 300px;
+  margin: 10px;
+  left: 0px;
+  padding: 10px;
+  font-size: 14px;
+  color:black;
+  position: absolute;
+  display: none;
+  font-family:"Arial","Helvetica";
+}
+
+.nao_contemplado { background: #fff;}
+.contemplado_p { background: #0099D7;}
+.contemplado_g { background: red;}
+.contemplado_2 { background: #ddd;}
+.contemplado_3 { background: #FFD200;}
+.contemplado_4 { background: #88B940;}

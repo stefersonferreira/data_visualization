@@ -1,37 +1,63 @@
 <html>
 <head>
-	<link href="css/style.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/tooltip.css"/>
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/tooltip.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  
-	<script src="https://d3js.org/d3.v4.js"></script>
-	<script src="js/scripts_v2.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+  
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="js/scripts.js"></script>
+ 
 </head>
 
-<body>
+
+<body><nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="color:#fff">Programas Educacionais do Governo do Estado</a>
+    </div>
+   
+</nav>
 	<div id="header">
         <div class="row header">
           <div class="container">
-              <h1> Programas Educacionais do Governo do Estado</h1>
-              <h2> Entendo a distribuição dos Programas Educacionais do Governo do Estado</h2>
-          		<p> O Governo do estado realiza programas relacionados à educação com o objetivo de fomentar o crescimento cultural da populcação, elevar os indices educacionais e capacitar os cidadãos para que desenvolvam suas regiões.</p>
+              <p>&nbsp;</p><p>&nbsp;</p>
+              <div class="titulo"> Entendo a distribuição dos Programas Educacionais do Governo do Estado</div>
 
-              <p> Analisamos alguns do programas específicos que visam o objetivo citado acima. Estes programas se distribuem pelos municípios do estado.</p>
+              <div class="dados">
+               Steferson Ferreira
+              | Dados de Janeiro de 2018  
+              </div>
+              <div class="descricao">
+              		<p> O Governo do estado realiza programas relacionados à educação com o objetivo de fomentar o crescimento cultural da população, elevar os indices educacionais e capacitar os cidadãos para que desenvolvam suas regiões.</p>
 
-              <p> Conheça estes programas do governo, onde estão ancontecendo.<br> Selecione qual programa deseja visualizar passe o mouse sobre cada área de destaque e verifique mais detalhe.</p>
+                  <p> Analisamos alguns do programas específicos que visam o objetivo citado acima. Estes programas se distribuem pelos municípios do estado.</p>
 
-              <h2> Quem são os maiores e menores beneficiados pelos programas?</h2>
-              <p> Para responder essas 2 perguntas disponibilizamos opçoes para avaliar os locais não contemplados e os contemplados por mais de 1 programa.</p>
+                  <p> Conheça estes programas do governo, onde estão ancontecendo.</p>
+              </div>
+              <p>&nbsp;</p>
 
+              <div class="titulo"> Quem são os maiores e menores beneficiados pelos programas?</div>
+              <div class="descricao">
+                <p> Para responder essas 2 perguntas disponibilizamos opções para avaliar os locais não contemplados e os contemplados por mais de 1 programa.</p>
+              </div>
               <div id="iniciar">Iniciar</div>
+
+              
           </div>
         </div>
     </div>
 <div class="principal">
       <div id='container' class='container'>
-        <h1> Programas Educacionais do Governo do Estado</h1>
         <div id='graph_full'></div>
       <div id="dadosMunicipio" class='tt tt-hidden'>
           <div>
@@ -43,6 +69,7 @@
           </div>
       </div>
       <div id="pergunta">Quais são mais e menos beneficiados?</div>
+       <div id="tipo_dado" class=''></div>
        <div id="nomeMunicipio" class=''></div>
        <div id="legenda1" class="legenda"> <span class="key-dot nao_contemplado"></span>Não contemplado &nbsp; <span class="key-dot contemplado_p"></span>Contemplado  </div>
      
@@ -52,10 +79,8 @@
        <div id="legenda3" class="legenda"><span class="key-dot nao_contemplado"></span>Não contemplado ou 1 &nbsp; <span class="key-dot contemplado_2"></span>2 Programas &nbsp; <span class="key-dot contemplado_3"></span>3 Programas &nbsp; <span class="key-dot contemplado_4"></span>4 Programas  </div>
 
       <div id="detalhe_info2" style="display: block;">
-            <div class="detalhe_info_title2">
-                <h1 id="dtlh_title">Conheça os programas do Governo do Estado</h1>
-                <div></div>
-                <p id="dtlh_desc">Veja onde eles acontecem!!</p>
+            
+                
             </div>
            
         </div>
@@ -67,25 +92,29 @@
 
 <script type="text/javascript">
  
- 		var margin = 75,
-	            width = 1100 - margin,
+ 		var margin = 5,
+	            width = 700 - margin,
 	            height = 600 - margin;
 
 
 	    //criando o svg para a exibiçao
-		var svg = d3.select('.container #graph_full')
+		var svg = d3.select(".container #graph_full")
 				.append("svg")
 	            .attr("width", width + margin)
 	            .attr("height", height + margin)
-	            .append('g')
-	            .attr('class', 'map');
+	            .append("g")
+	            .attr("class", "map");
 		
 		//chamada para a carga do mapa
     $( "#iniciar" ).click(function() {
         $('html, body').animate({ scrollTop:3031 },"fast");
         carregaMapa(svg) ;
 
+
+        
     });
+
+    
 		
 		var isIE9 = false
 		if (!window.console) {
