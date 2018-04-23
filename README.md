@@ -19,18 +19,18 @@
 	- Após a exibiçao é permitido ao usuário selecionar qual programa deseja visualizar, ver seus detalhes e ao por o mouse sobre cada uma das áreas obter detalhes sobre os números daquela área.
 
 ## Feedback
-	- Avaliador 1
+### Avaliador 1
 	Avaliação: <pre> "Eu achei bacana no geral. Acho que poderia ser um pouco mais intuitivo. No começo, aquela animação atrapalha um pouco é muita informação e não conseguimos saber o que tá sendo mostrado exatamente acho que as bolas amarelas poluem um pouco também. Poderia pensar numa outra forma de mostrar esses números, ou coloca uma opção pro usuário ativar ou não esse componente no mais bem bacana"</pre>
 	Ações: Melhoria nas explicaçoes, revisão na exibiçao dos dados na parte lateral.
 
-	- Avaliador 2
+### Avaliador 2
 	Avaliação: 
 	1) quando inicia, fica passando gráfico por gráfico, fiquei confuso, não sabia como  era o funcionamento. Daí entendi que passa de um por um e depois fica disponível pra ir selecionando talvez se já abrir direto na opção de ir selecionando seja mais eficaz
 	2) nos dois últimos botões, contemplados e não contemplados poderia mudar a cor, o verde sugere coisa positiva mas está no botão de não contemplados
 	3) demorei a entender que a bola amarela é pra indicar a quantidade alunos, quanto maior mais alunos e exibe o popup. Talvez alguma legenda ou orientação pra informar isso ajude (ou eu que sou burro mesmo, hehe)
 	Ações: Revisão da passagem automática, mudança da cor dos botoes, adicionado legenda.
 
-	- Avaliador 3
+### Avaliador 3
 	Avaliação:
 	O que você percebe na visualização?
 	A distribuição dos programas pelos municípios além da quantidade de beneficiados.
